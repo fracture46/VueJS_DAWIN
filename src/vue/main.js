@@ -11,32 +11,48 @@ Vue.component('movie-item', MovieItemComponent);
 const axios = require('axios');
 
 window.shared_data = {
-  editedMovie: {},
+  pickedMovie: {},
+  movies: [],
   getAllMovies : axios.get('/api/movies/all')
     .then(function (response) {
-      window.shared_data.movies.push(...response.data); 
-      console.log(response);
-      console.log(window.shared_data.movies);
+      window.shared_data.movies.push(...response.data);
     })
     .catch(function (error) {
       // handle error
       console.log(error);
-    })
-    .then(function () {
-      // always executed
     }),
-  movies: [],
   getMovie : function(id)
   {
     axios.get('/api/movies/'+id)
+    .catch(function (error) {
+      console.log(error);
+    })
     .then(function (response) {
       console.log(response.data);
       return response.data;
     })
+  },
+  addMovie : function(movie)
+  {
+    console.log("bwah");
+    console.log(movie);
+    axios.post('/api/movies/add', movie)
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .then(function (response){
+      window.shared_data.getAllMovies;
+      console.log(response);
+    })
+  },
+  updateMovie : function(id, movie) {
+    axios.post('/api/movies/'+id, movie)
     .catch(function (error) {
       console.log(error);
     })
-    .then(function () {
+    .then(function (response){
+      console.log(response);
     })
   }
 }

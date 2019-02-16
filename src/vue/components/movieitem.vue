@@ -16,6 +16,7 @@ export default {
     methods:{
         editMovie(movie){
             var id = window.shared_data.movies.indexOf(movie);
+            window.shared_data.pickedMovie = movie;
             this.$router.push({ path: `movie/${id}/edit` })
         },
         deleteMovie(movie){

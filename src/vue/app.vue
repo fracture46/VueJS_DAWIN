@@ -16,6 +16,7 @@
 export default {
     data() {
         return {
+            title: "Movie manager",
             message: "Welcome",
             search: "",
             movies : window.shared_data.movies
@@ -29,11 +30,6 @@ export default {
         remove: function(index) {
             this.movies.splice(index, 1)
         }
-    },
-
-    mounted: function() {
-        console.log("Created")
-        window.shared_data.getAllMovies
     },
 
     computed: {

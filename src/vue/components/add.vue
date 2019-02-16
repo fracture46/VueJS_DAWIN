@@ -17,7 +17,8 @@ export default {
 
     methods: {
         newmovie: function() {
-            window.shared_data.movies.push(this.movie_to_add)
+            console.log(this.movie_to_add);
+            window.shared_data.addMovie(this.movie_to_add)
             this.movie_to_add = {}
             this.$router.push({ path: `/` })
         }
