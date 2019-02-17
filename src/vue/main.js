@@ -1,4 +1,4 @@
-import Vue from 'vue' //librairie "vue" dans node_modules
+import Vue from 'vue'
 import MovieItemComponent from './components/movieitem.vue'
 import Vuetify from 'vuetify'
 import router from './routes.js'
@@ -18,7 +18,6 @@ window.shared_data = {
       window.shared_data.movies.push(...response.data);
     })
     .catch(function (error) {
-      // handle error
       console.log(error);
     }),
   getMovie : function(id)
@@ -34,15 +33,11 @@ window.shared_data = {
   },
   addMovie : function(movie)
   {
-    console.log("bwah");
-    console.log(movie);
     axios.post('/api/movies/add', movie)
     .catch(function (error) {
-      // handle error
       console.log(error);
     })
     .then(function (response){
-      window.shared_data.getAllMovies;
       console.log(response);
     })
   },
@@ -61,20 +56,3 @@ new Vue({
   el: '#app',
   router
 })
-
-
-/*package.json
-webpack.config.js
-node_modules/
-src/
-    |_ static/ # les images et fichiers CSS
-    |_ node/
-        |_ app.js # point d'entrée de l'application Node ???? 
-    |_ vue/
-        |_ main.js # point d'entrée de l'application Vue.js ???? => le reste - ce qui va dans routes.js
-        |_ app.vue
-        |_ routes.js # config de vue-router ???? => routes + new router
-        |_ components/
-            |_ movie-item.vue
-            |_ ...
-    |_ dist/ # Sortie de la compilation avec Webpack*/

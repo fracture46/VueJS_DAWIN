@@ -22,19 +22,16 @@ expressRouter.route('/movies/:id').get(function(req, res) {
 expressRouter.route('/movies/:id').post(function(req, res) {
     var movie = Movies[req.params.id];
     var editedMovie = req.body;
-    console.log(editedMovie.title, editedMovie.year, editedMovie.synopsys)
+    console.log(movie, editedMovie);
     movie.title = editedMovie.title;
     movie.year = parseInt(editedMovie.year);
-    movie.synopsys = editedMovie.synopsys;
+    movie.language = editedMovie.language;
+    movie.genre = editedMovie.genre;
+    movie.director.name = editedMovie.director.name;
+    movie.director.nationality = editedMovie.director.nationality;
+    movie.director.birthdate = movie.director.birthdate;
+
     res.json(movie);
 })
 
 module.exports = expressRouter;
-
-/*
-app.get('/movies/:id', (req, res) => res.send(movies[req.params.id]))
-
-app.post('/add', (req,res) => {
-    console.log('Req time from object : '+req.date)
-    res.send(`${parseInt(req.body['foo']) + parseInt(req.body['bar'])}`)
-})*/
