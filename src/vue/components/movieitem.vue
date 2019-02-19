@@ -17,10 +17,7 @@ export default {
             var id = shared_data.movies.indexOf(movie);
             shared_data.pickedMovie = movie;
             this.$router.push({ path: `movie/${id}` })
-        },
-        deleteMovie(movie){
-            this.$emit('remove', movie);
-        },
+        }
     }
 }
 </script>

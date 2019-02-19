@@ -39,6 +39,7 @@ window.shared_data = {
     })
     .then(function (response){
       console.log(response);
+      return response.data;
     })
   },
   updateMovie : function(id, movie) {
@@ -48,6 +49,27 @@ window.shared_data = {
     })
     .then(function (response){
       console.log(response);
+      return response.data;
+    })
+  },
+  addRate : function(id, newRate) {
+    axios.post('/api/movies/'+id+'/addRate', newRate)
+    .catch(function (error) {
+      console.log(error);
+    })
+    .then(function (response){
+      console.log(response);
+      return response.data;
+    })
+  },
+  deleteMovie : function(id){
+    axios.post('/api/movies/'+id+'/delete')
+    .catch(function (error) {
+      console.log(error);
+    })
+    .then(function (response){
+      console.log(response);
+      return response.data;
     })
   }
 }

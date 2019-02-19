@@ -33,10 +33,11 @@ export default {
 
     methods: {
         newMovie: function() {
-            shared_data.addMovie(this.movie_to_add)
+            shared_data.addMovie(this.movie_to_add);
+            shared_data.movies.push(this.movie_to_add);
             var id = shared_data.movies.length+1;
             shared_data.pickedMovie = this.movie_to_add;
-            this.$router.push({ path: `/movie/${id}` })
+            this.$router.push({ path: `/movie/${id}` });
         }
     }
 }

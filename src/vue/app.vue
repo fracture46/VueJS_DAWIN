@@ -28,7 +28,7 @@ export default {
              this.$router.push({ path: `/new` })
         },
         remove: function(index) {
-            this.movies.splice(index, 1)
+            this.movies = window.shared_data.getAllMovies;
         }
     },
 

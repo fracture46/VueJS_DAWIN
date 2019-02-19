@@ -22,7 +22,6 @@ expressRouter.route('/movies/:id').get(function(req, res) {
 expressRouter.route('/movies/:id').post(function(req, res) {
     var movie = Movies[req.params.id];
     var editedMovie = req.body;
-    console.log(movie, editedMovie);
     movie.title = editedMovie.title;
     movie.year = parseInt(editedMovie.year);
     movie.language = editedMovie.language;
@@ -31,6 +30,20 @@ expressRouter.route('/movies/:id').post(function(req, res) {
     movie.director.nationality = editedMovie.director.nationality;
     movie.director.birthdate = movie.director.birthdate;
 
+    res.json(movie);
+})
+
+expressRouter.route('/movies/:id/addRate').post(function(req, res) {
+    var movie = Movies[req.params.id];
+    var newRate = req.body;
+    console.log(req.body, newRate, newRate.rate, parseInt(newRate.rate))
+    movie.rate.push(parseInt(newRate.rate));
+    res.json(movie);
+})
+
+expressRouter.route('/movies/:id/delete').post(function(req, res) {
+    var movie = Movies[req.params.id];
+    Movies.splice(req.params.id, 1);
     res.json(movie);
 })
 
