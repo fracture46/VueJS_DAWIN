@@ -26,7 +26,8 @@ export default {
                     name: "",
                     nationality: "",
                     birthdate: ""
-                }
+                },
+                rate: []
             }
         }
     },

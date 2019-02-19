@@ -48,7 +48,12 @@ export default {
     },
     computed: {
         movieRate() {
-            return Math.round(this.movie.rate.reduce((a, b) => a + b, 0) / this.movie.rate.length * 10) / 10;
+            if(this.movie.rate.length == 0) {
+                this.message = "No rate found";
+                return "no rate"
+            } else {
+                return Math.round(this.movie.rate.reduce((a, b) => a + b, 0) / this.movie.rate.length * 10) / 10;
+            }
         }
     }
 }

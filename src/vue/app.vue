@@ -3,7 +3,9 @@
     <span id="msg" class="display-1">{{message}}</span>
 
     <p class="display-2">Movie number : {{movies.length}}</p>
-    <v-btn color="success" v-on:click="add"><v-icon dark>add</v-icon>Add</v-btn>
+    <v-btn color="success" v-on:click="add"><v-icon dark>add</v-icon>New movie</v-btn>
+    <movie-add v-if="newMovieForm"></movie-add>
+
     <v-text-field label="Search a movie" placeholder="Movie's title you're searching" outline v-model="search"></v-text-field>
 
     <ul>
@@ -19,13 +21,14 @@ export default {
             title: "Movie manager",
             message: "Welcome",
             search: "",
-            movies : window.shared_data.movies
+            movies : window.shared_data.movies,
+            newMovieForm : false
         }
     },
 
     methods: {
         add: function(){
-             this.$router.push({ path: `/new` })
+            this.newMovieForm = true;
         },
         remove: function(index) {
             this.movies = window.shared_data.getAllMovies;

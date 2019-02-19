@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import MovieItemComponent from './components/movieitem.vue'
+import addMovieComponent from './components/add.vue'
 import Vuetify from 'vuetify'
 import router from './routes.js'
 import 'vuetify/dist/vuetify.min.css'
@@ -7,6 +8,7 @@ import 'vuetify/dist/vuetify.min.css'
 Vue.use(Vuetify)
 
 Vue.component('movie-item', MovieItemComponent);
+Vue.component('movie-add', addMovieComponent);
 
 const axios = require('axios');
 

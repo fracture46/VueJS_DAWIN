@@ -36,7 +36,6 @@ expressRouter.route('/movies/:id').post(function(req, res) {
 expressRouter.route('/movies/:id/addRate').post(function(req, res) {
     var movie = Movies[req.params.id];
     var newRate = req.body;
-    console.log(req.body, newRate, newRate.rate, parseInt(newRate.rate))
     movie.rate.push(parseInt(newRate.rate));
     res.json(movie);
 })

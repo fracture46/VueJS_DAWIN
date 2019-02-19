@@ -10,7 +10,6 @@ Vue.use(VueRouter);
 const routes = [
     { path: '/', component: app},
     { path: '/movie/:id', component: MovieDetails},
-    { path: '/new', component: add},
     { path: '/movie/:id/edit', component: edit}
 ];
 
