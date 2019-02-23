@@ -37,7 +37,7 @@ export default {
 }
 </script>
 <style scoped>
-img{
+img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -49,10 +49,10 @@ span {
     font-size:28px;
     vertical-align:middle;
 }
-#title{
+#title {
     font-weight: bold;
 }
-#details_btn{
+#details_btn {
     margin-bottom: 20px;
 }
 </style>
