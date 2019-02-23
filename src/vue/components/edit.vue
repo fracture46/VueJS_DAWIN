@@ -7,7 +7,7 @@
         <v-text-field label="Year" placeholder="Movie's release year" outline v-model="editedMovie.year">{{ editedMovie.year }}</v-text-field>
         <v-text-field label="Language" placeholder="Movie's language" outline v-model="editedMovie.language">{{ editedMovie.language }}</v-text-field>
         <v-text-field label="Genre" placeholder="Movie's genre" outline v-model="editedMovie.genre">{{ editedMovie.genre }}</v-text-field>
-        <span class="display-1">Director's informations</span><br/>
+        <span class="display-1">Director's information</span><br/>
         <v-text-field label="Name" placeholder="Director's name" outline v-model="editedMovie.director.name">{{ editedMovie.director.name }}</v-text-field>
         <v-text-field label="Nationality" placeholder="Director's nationality" outline v-model="editedMovie.director.nationality">{{ editedMovie.director.nationality }}</v-text-field>
         <v-text-field label="Birthdate" placeholder="Director's birthdate" outline v-model="editedMovie.director.birthdate">{{ editedMovie.director.birthdate }}</v-text-field>

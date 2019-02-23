@@ -12,7 +12,7 @@
     <v-btn color="success" v-on:click="addRate(movie)"><v-icon dark>save</v-icon>Add rate</v-btn>
     <v-btn color="success" v-on:click="editMovie(movie)"><v-icon dark>edit</v-icon>Edit</v-btn>
     <v-btn color="error" v-on:click="deleteMovie(movie)"><v-icon dark>delete</v-icon>Delete</v-btn>
-    <v-btn color="info" v-on:click="back()"><v-icon dark>info</v-icon>Back</v-btn><br/>
+    <v-btn color="info" v-on:click="back()"><v-icon dark>arrow_back</v-icon>Back</v-btn><br/>
     {{message}}
 </div>
 </template>

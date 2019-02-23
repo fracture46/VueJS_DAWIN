@@ -5,7 +5,7 @@
     <span>A {{movie.language}} {{movie.genre}} movie</span><br/>
     <span>Released in {{movie.year}}, directed by {{movie.director.name}} ({{movie.director.nationality}} director born in {{movie.director.birthdate}})</span><br/>
     <span>Note moyenne : {{movieRate}} / 5</span><br/>
-    <v-btn id="details_btn" color="success" v-on:click="movieDetails(movie)"><v-icon dark>edit</v-icon>More details</v-btn>
+    <v-btn id="details_btn" color="info" v-on:click="movieDetails(movie)"><v-icon dark>info</v-icon>More details</v-btn>
 </div>
 </template>
 <script>

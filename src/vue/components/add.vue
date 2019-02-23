@@ -6,7 +6,7 @@
         <v-text-field label="Year" placeholder="Movie's release year" outline v-model="movie_to_add.year"></v-text-field>
         <v-text-field label="Language" placeholder="Movie's language" outline v-model="movie_to_add.language"></v-text-field>
         <v-text-field label="Genre" placeholder="Movie's genre" outline v-model="movie_to_add.genre"></v-text-field>
-        <span class="display-1">Director's informations</span><br/>
+        <span class="display-1">Director's information</span><br/>
         <v-text-field label="Name" placeholder="Director's name" outline v-model="movie_to_add.director.name"></v-text-field>
         <v-text-field label="Nationality" placeholder="Director's nationality" outline v-model="movie_to_add.director.nationality"></v-text-field>
         <v-text-field label="Birthdate" placeholder="Director's birthdate" outline v-model="movie_to_add.director.birthdate"></v-text-field>
