@@ -1,6 +1,6 @@
 <template>
 <div>
-    <span style="font-size:28px;vertical-align:middle">Poster ici</span><br/>
+    <img :src="movie.poster.file || 'no_poster.svg'" /><br/>
     <span style="font-size:28px;vertical-align:middle">Titre : {{ movie.title }}</span><br/>
     <span style="font-size:28px;vertical-align:middle">Année de sortie : {{movie.year}}</span><br/>
     <span style="font-size:28px;vertical-align:middle">Langue : {{movie.language}}</span><br/>

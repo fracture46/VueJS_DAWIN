@@ -1,6 +1,7 @@
 <template>
     <p>
         <span class="display-3">New movie</span><br />
+        <span>Poster : </span> <input type="file" id="poster" accept=".png, .jpg, .jpeg" v-on:change="getPoster($event)">
         <v-text-field label="Title" placeholder="Movie's title" outline v-model="movie_to_add.title"></v-text-field>
         <v-text-field label="Year" placeholder="Movie's release year" outline v-model="movie_to_add.year"></v-text-field>
         <v-text-field label="Language" placeholder="Movie's language" outline v-model="movie_to_add.language"></v-text-field>
@@ -27,12 +28,18 @@ export default {
                     nationality: "",
                     birthdate: ""
                 },
-                rate: []
+                rate: [],
+                poster: {
+                    file: null
+                }
             }
         }
     },
 
     methods: {
+        getPoster: function(e){
+            this.movie_to_add.poster.file = e.target.files[0].name;
+        },
         newMovie: function() {
             shared_data.addMovie(this.movie_to_add);
             shared_data.movies.push(this.movie_to_add);

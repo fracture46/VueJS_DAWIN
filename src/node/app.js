@@ -17,7 +17,10 @@ global.Movies = [
             nationality: "American",
             birthdate: "30/11/1952"
         },
-        rate : [1, 5, 4]
+        rate : [1, 5, 4],
+        poster: {
+            file: `L'étrange noël de mr Jack.jpg`
+        }
     },
     {
         title: "Interstellar",
@@ -29,7 +32,10 @@ global.Movies = [
             nationality: "Britain/American",
             birthdate: "30/07/1970"
         },
-        rate : [3, 2, 5]
+        rate : [3, 2, 5],
+        poster: {
+            file: `interstellar.jpg`
+        }
     }
 ];
 

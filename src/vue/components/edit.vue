@@ -1,6 +1,8 @@
 <template>
     <p>
         <span class="display-3">Edit movie</span><br />
+        <img :src="editedMovie.poster.file || 'no_poster.svg'" /><br/>
+        <span>change poster : </span> <input type="file" id="poster" accept=".png, .jpg, .jpeg" v-on:change="getPoster($event)">
         <v-text-field label="Title" placeholder="Movie's title" outline v-model="editedMovie.title">{{ editedMovie.title }}</v-text-field>
         <v-text-field label="Year" placeholder="Movie's release year" outline v-model="editedMovie.year">{{ editedMovie.year }}</v-text-field>
         <v-text-field label="Language" placeholder="Movie's language" outline v-model="editedMovie.language">{{ editedMovie.language }}</v-text-field>
@@ -20,6 +22,9 @@ export default {
         }
     },
     methods: {
+        getPoster: function(e){
+            this.editedMovie.poster.file = e.target.files[0].name;
+        },
         save: function() {
             var id = window.shared_data.movies.indexOf(this.editedMovie);
             window.shared_data.updateMovie(id, this.editedMovie)
