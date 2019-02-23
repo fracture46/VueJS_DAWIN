@@ -11,7 +11,8 @@
 
     <v-btn color="success" v-on:click="addRate(movie)"><v-icon dark>save</v-icon>Add rate</v-btn>
     <v-btn color="success" v-on:click="editMovie(movie)"><v-icon dark>edit</v-icon>Edit</v-btn>
-    <v-btn color="error" v-on:click="deleteMovie(movie)"><v-icon dark>delete</v-icon>Delete</v-btn><br/>
+    <v-btn color="error" v-on:click="deleteMovie(movie)"><v-icon dark>delete</v-icon>Delete</v-btn>
+    <v-btn color="info" v-on:click="back()"><v-icon dark>info</v-icon>Back</v-btn><br/>
     {{message}}
 </div>
 </template>
@@ -39,11 +40,22 @@ export default {
         },
         addRate: function(movie){
             if(this.message != "") this.message = "";
-            var id = window.shared_data.movies.indexOf(movie);
-            window.shared_data.addRate(id, {'rate' : this.newRate});
-            window.shared_data.movies[id].rate.push(parseInt(this.newRate));
-            this.movie.rate.push(parseInt(this.newRate));
-            this.message = "Rate added !";
+            if(!isNaN(parseInt(this.newRate))) {
+                if(parseInt(this.newRate) > 5 || parseInt(this.newRate) < 0) {
+                    this.message = "Rate have to be between 0 and 5 !";
+                } else {
+                    var id = window.shared_data.movies.indexOf(movie);
+                    window.shared_data.addRate(id, {'rate' : this.newRate});
+                    window.shared_data.movies[id].rate.push(parseInt(this.newRate));
+                    this.movie.rate.push(parseInt(this.newRate));
+                    this.message = "Rate added !";
+                }
+            } else {
+                this.message = "Rate have to be a number !";
+            }
+        },
+        back: function(){
+            this.$router.push({ path: `/` });
         }
     },
     computed: {
@@ -59,5 +71,11 @@ export default {
 }
 </script>
 <style scoped>
-    /* Style spécifique à ce composant */
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 350px;
+    max-height: 450px;
+}
 </style>

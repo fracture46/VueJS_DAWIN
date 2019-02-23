@@ -1,7 +1,7 @@
 <template>
     <p>
         <span class="display-3">New movie</span><br />
-        <span>Poster : </span> <input type="file" id="poster" accept=".png, .jpg, .jpeg" v-on:change="getPoster($event)">
+        <span id="poster">Poster : </span> <input type="file" id="poster" accept=".png, .jpg, .jpeg" v-on:change="getPoster($event)">
         <v-text-field label="Title" placeholder="Movie's title" outline v-model="movie_to_add.title"></v-text-field>
         <v-text-field label="Year" placeholder="Movie's release year" outline v-model="movie_to_add.year"></v-text-field>
         <v-text-field label="Language" placeholder="Movie's language" outline v-model="movie_to_add.language"></v-text-field>
@@ -35,7 +35,6 @@ export default {
             }
         }
     },
-
     methods: {
         getPoster: function(e){
             this.movie_to_add.poster.file = e.target.files[0].name;
@@ -50,3 +49,9 @@ export default {
     }
 }
 </script>
+
+<style>
+#poster {
+  margin: 10px 0px 25px 0px;
+}
+</style>
